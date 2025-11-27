@@ -165,7 +165,6 @@ const PortfolioStructured = () => {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      // Simulazione chiamata API Cloudflare
       await new Promise(resolve => setTimeout(resolve, 1500));
       console.log("Form Data:", data);
       setFormStatus('success');
@@ -518,7 +517,7 @@ const PortfolioStructured = () => {
                             id="name"
                             required
                             className="w-full bg-[#0b0b0d] border border-slate-800 text-slate-200 text-sm rounded-lg pl-10 p-2.5 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-colors"
-                            placeholder="Matias Negro"
+                            placeholder="Nome Cognome"
                           />
                         </div>
                       </div>
@@ -532,7 +531,7 @@ const PortfolioStructured = () => {
                             id="email"
                             required
                             className="w-full bg-[#0b0b0d] border border-slate-800 text-slate-200 text-sm rounded-lg pl-10 p-2.5 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-colors"
-                            placeholder="matias@example.com"
+                            placeholder="email@example.com"
                           />
                         </div>
                       </div>

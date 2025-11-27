@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Stili globali per reset e sfondo coerente */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0b0d;
+  color: #cbd5e1; /* slate-300 equivalent */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}

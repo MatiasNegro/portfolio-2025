@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
   Download,
-  ExternalLink,
   Github,
   Linkedin,
   Mail,
@@ -189,22 +188,22 @@ const PortfolioStructured = () => {
     <div className="relative pl-8 md:pl-0 animate-on-scroll">
       <div className="md:grid md:grid-cols-[130px_1fr] md:gap-8 group">
         <div className="hidden md:block text-right pt-1 pr-4">
-          <span className="text-xs font-mono text-slate-500 font-medium uppercase tracking-wider">{date}</span>
+          <span className="text-xs font-mono text-slate-400 font-medium uppercase tracking-wider">{date}</span>
         </div>
         <div className="absolute left-0 top-0 bottom-0 w-px bg-slate-800 md:left-[146px]">
           <div className={`absolute left-[-4px] top-2.5 w-2.5 h-2.5 rounded-full border-2 transition-all duration-300 ${date.includes(t.present) ? 'bg-blue-500 border-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.6)]' : 'bg-[#0b0b0d] border-slate-600 group-hover:border-blue-400 group-hover:scale-125'}`}></div>
         </div>
         <div className={`pb-12 ${!isLast ? '' : ''}`}>
-          <div className="md:hidden text-xs font-mono text-slate-500 mb-2 uppercase tracking-wide">{date}</div>
+          <div className="md:hidden text-xs font-mono text-slate-400 mb-2 uppercase tracking-wide">{date}</div>
           <h3 className="text-lg font-bold text-slate-100 group-hover:text-blue-400 transition-colors duration-300">{title}</h3>
           <div className="text-blue-200/80 text-sm font-medium mb-3">{company}</div>
-          <div className="text-slate-400 text-sm leading-relaxed mb-4 max-w-2xl">
+          <div className="text-slate-300 text-sm leading-relaxed mb-4 max-w-2xl">
             {description}
           </div>
           {tech && (
             <div className="flex flex-wrap gap-2">
               {tech.map((item) => (
-                <span key={item} className="px-2.5 py-1 rounded-md text-[10px] font-medium bg-slate-800/50 text-slate-400 border border-slate-700/50 group-hover:border-slate-600 transition-colors">
+                <span key={item} className="px-2.5 py-1 rounded-md text-[10px] font-medium bg-slate-800/50 text-slate-300 border border-slate-700/50 group-hover:border-slate-600 transition-colors">
                   {item}
                 </span>
               ))}
@@ -220,16 +219,15 @@ const PortfolioStructured = () => {
       <div className="flex justify-between items-start mb-4">
         <div>
           <h3 className="text-base font-bold text-slate-100 group-hover:text-blue-400 transition-colors">{title}</h3>
-          <span className="text-xs font-mono text-slate-500">{type}</span>
+          <span className="text-xs font-mono text-slate-400">{type}</span>
         </div>
-        <ExternalLink size={16} className="text-slate-600 group-hover:text-slate-300 transition-colors" />
       </div>
-      <p className="text-sm text-slate-400 mb-5 leading-relaxed">
+      <p className="text-sm text-slate-300 mb-5 leading-relaxed">
         {desc}
       </p>
       <div className="flex flex-wrap gap-2 mt-auto">
         {tags.map(tag => (
-          <span key={tag} className="text-[10px] px-2 py-1 rounded bg-slate-900 text-slate-400 border border-slate-800 group-hover:border-slate-700 transition-colors">
+          <span key={tag} className="text-[10px] px-2 py-1 rounded bg-slate-900 text-slate-300 border border-slate-800 group-hover:border-slate-700 transition-colors">
             {tag}
           </span>
         ))}
@@ -261,7 +259,7 @@ const PortfolioStructured = () => {
                 <button
                   key={l}
                   onClick={() => setLang(l)}
-                  className={`px-2 py-1 rounded text-xs font-bold uppercase transition-all ${lang === l ? 'text-blue-400' : 'text-slate-500 hover:text-slate-300'}`}
+                  className={`px-2 py-1 rounded text-xs font-bold uppercase transition-all ${lang === l ? 'text-blue-400' : 'text-slate-400 hover:text-slate-300'}`}
                 >
                   {l}
                 </button>
@@ -276,7 +274,7 @@ const PortfolioStructured = () => {
                 <button
                   key={l}
                   onClick={() => setLang(l)}
-                  className={`text-xs font-bold uppercase ${lang === l ? 'text-blue-400' : 'text-slate-500'}`}
+                  className={`text-xs font-bold uppercase ${lang === l ? 'text-blue-400' : 'text-slate-400'}`}
                 >
                   {l}
                 </button>
@@ -319,18 +317,18 @@ const PortfolioStructured = () => {
                 </div>
                 <h1 className="text-2xl font-bold text-white mb-1">Matias Negro</h1>
                 <p className="text-blue-400 font-medium text-sm mb-4">{t.role}</p>
-                <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                <p className="text-sm text-slate-300 leading-relaxed mb-6">
                   {t.bio}
                 </p>
-                <div className="space-y-3 text-sm text-slate-500 border-t border-slate-800 pt-5">
+                <div className="space-y-3 text-sm text-slate-400 border-t border-slate-800 pt-5">
                   <div className="flex items-center gap-3">
-                    <MapPin size={16} className="text-slate-400" /> {t.location}
+                    <MapPin size={16} className="text-slate-300" /> {t.location}
                   </div>
                   <div className="flex items-center gap-3">
-                    <Globe size={16} className="text-slate-400" /> 🇮🇹 / 🇪🇸
+                    <Globe size={16} className="text-slate-300" /> 🇮🇹 / 🇪🇸
                   </div>
                   <div className="flex items-center gap-3">
-                    <GraduationCap size={16} className="text-slate-400" /> {t.student}
+                    <GraduationCap size={16} className="text-slate-300" /> {t.student}
                   </div>
                 </div>
               </div>
@@ -348,8 +346,8 @@ const PortfolioStructured = () => {
               </div>
 
               <div className="flex gap-6 justify-center mt-6 pt-6 border-t border-slate-800">
-                <a href="https://github.com/MatiasNegro" target="_blank" rel="noreferrer" className="text-slate-500 hover:text-white hover:scale-110 transition-all"><Github size={20} /></a>
-                <a href="https://linkedin.com/in/matias-negro" target="_blank" rel="noreferrer" className="text-slate-500 hover:text-blue-500 hover:scale-110 transition-all"><Linkedin size={20} /></a>
+                <a href="https://github.com/MatiasNegro" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white hover:scale-110 transition-all"><Github size={20} /></a>
+                <a href="https://linkedin.com/in/matias-negro" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-500 hover:scale-110 transition-all"><Linkedin size={20} /></a>
               </div>
             </div>
 
@@ -361,7 +359,7 @@ const PortfolioStructured = () => {
 
               <div className="space-y-6">
                 <div>
-                  <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Languages</div>
+                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Languages</div>
                   <div className="flex flex-wrap gap-1.5">
                     {['Java', 'Python', 'C / C++', 'PHP', 'SQL', 'Go', 'Dart', 'JS'].map(s => (
                       <span key={s} className="px-2.5 py-1 rounded bg-[#1a1a1e] text-slate-300 text-xs border border-slate-800 hover:border-blue-500/50 hover:text-blue-400 transition-colors cursor-default">{s}</span>
@@ -370,7 +368,7 @@ const PortfolioStructured = () => {
                 </div>
 
                 <div>
-                  <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Frameworks & Tools</div>
+                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Frameworks & Tools</div>
                   <div className="flex flex-wrap gap-1.5">
                     {['Symfony', 'React', 'Flutter', 'Docker', 'Kafka', 'Pandas', 'Git'].map(s => (
                       <span key={s} className="px-2.5 py-1 rounded bg-[#1a1a1e] text-slate-300 text-xs border border-slate-800 hover:border-indigo-500/50 hover:text-indigo-400 transition-colors cursor-default">{s}</span>
@@ -425,8 +423,8 @@ const PortfolioStructured = () => {
               <div className="bg-[#121214] p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
                 <div className="text-xs text-blue-400 font-mono mb-2 uppercase tracking-wider">2024 - {t.present}</div>
                 <div className="font-bold text-slate-100 text-lg mb-1">M.Sc. Computer Engineering</div>
-                <div className="text-sm text-slate-500 mb-3">Università degli Studi di Bergamo</div>
-                <div className="text-xs text-slate-400 border-t border-slate-800 pt-3">
+                <div className="text-sm text-slate-400 mb-3">Università degli Studi di Bergamo</div>
+                <div className="text-xs text-slate-300 border-t border-slate-800 pt-3">
                   Curriculum SIR (Sistemi Informativi in Rete)
                 </div>
               </div>
@@ -434,17 +432,17 @@ const PortfolioStructured = () => {
               <div className="bg-[#121214] p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
                 <div className="text-xs text-blue-400 font-mono mb-2 uppercase tracking-wider">Spring 2025</div>
                 <div className="font-bold text-slate-100 text-lg mb-1">CERN Spring School</div>
-                <div className="text-sm text-slate-500 mb-3">CERN (Pori, Finlandia)</div>
-                <div className="text-xs text-slate-400 border-t border-slate-800 pt-3">
+                <div className="text-sm text-slate-400 mb-3">CERN (Pori, Finlandia)</div>
+                <div className="text-xs text-slate-300 border-t border-slate-800 pt-3">
                   High Energy Physics Computing
                 </div>
               </div>
 
               <div className="bg-[#121214] p-6 rounded-xl border border-slate-800 hover:border-slate-700 transition-colors">
-                <div className="text-xs text-slate-500 font-mono mb-2 uppercase tracking-wider">2019 - 2024</div>
+                <div className="text-xs text-slate-400 font-mono mb-2 uppercase tracking-wider">2019 - 2024</div>
                 <div className="font-bold text-slate-100 text-lg mb-1">B.Sc. Ingegneria Informatica</div>
-                <div className="text-sm text-slate-500 mb-3">Università degli Studi di Bergamo</div>
-                <div className="text-xs text-slate-400 border-t border-slate-800 pt-3">
+                <div className="text-sm text-slate-400 mb-3">Università degli Studi di Bergamo</div>
+                <div className="text-xs text-slate-300 border-t border-slate-800 pt-3">
                   Voto: 94/110
                 </div>
               </div>
@@ -487,16 +485,16 @@ const PortfolioStructured = () => {
                 <div className="md:col-span-1 space-y-6 border-b md:border-b-0 md:border-r border-slate-800 pb-6 md:pb-0 md:pr-6">
                   <div>
                     <h3 className="text-sm font-bold text-white mb-4">Connect</h3>
-                    <p className="text-sm text-slate-400 mb-6 leading-relaxed">
+                    <p className="text-sm text-slate-300 mb-6 leading-relaxed">
                       Interessato a collaborazioni su sistemi scalabili o sviluppo open-source? Contattami.
                     </p>
                   </div>
                   <div className="space-y-4">
-                    <a href="mailto:matiasnegro@outlook.it" className="flex items-center gap-3 text-slate-400 hover:text-blue-400 transition-colors">
+                    <a href="mailto:matiasnegro@outlook.it" className="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition-colors">
                       <Mail size={18} />
                       <span className="text-sm">Email Me</span>
                     </a>
-                    <a href="https://linkedin.com/in/matias-negro" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-slate-400 hover:text-blue-400 transition-colors">
+                    <a href="https://linkedin.com/in/matias-negro" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition-colors">
                       <Linkedin size={18} />
                       <span className="text-sm">LinkedIn</span>
                     </a>
@@ -508,7 +506,7 @@ const PortfolioStructured = () => {
                   <form onSubmit={handleFormSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <label htmlFor="name" className="text-xs font-bold text-slate-500 uppercase tracking-wider">{t.form.name}</label>
+                        <label htmlFor="name" className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t.form.name}</label>
                         <div className="relative">
                           <User size={16} className="absolute left-3 top-3 text-slate-600" />
                           <input
@@ -522,7 +520,7 @@ const PortfolioStructured = () => {
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <label htmlFor="email" className="text-xs font-bold text-slate-500 uppercase tracking-wider">{t.form.email}</label>
+                        <label htmlFor="email" className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t.form.email}</label>
                         <div className="relative">
                           <Mail size={16} className="absolute left-3 top-3 text-slate-600" />
                           <input
@@ -538,7 +536,7 @@ const PortfolioStructured = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <label htmlFor="message" className="text-xs font-bold text-slate-500 uppercase tracking-wider">{t.form.message}</label>
+                      <label htmlFor="message" className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t.form.message}</label>
                       <div className="relative">
                         <MessageSquare size={16} className="absolute left-3 top-3 text-slate-600" />
                         <textarea

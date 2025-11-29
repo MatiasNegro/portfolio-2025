@@ -530,7 +530,7 @@ const PortfolioStructured = () => {
                             id="name"
                             required
                             className="w-full bg-[#0b0b0d] border border-slate-800 text-slate-200 text-sm rounded-lg pl-10 p-2.5 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-colors"
-                            placeholder={form.name}
+                            placeholder={t.form.name}
                           />
                         </div>
                       </div>
@@ -544,7 +544,7 @@ const PortfolioStructured = () => {
                             id="email"
                             required
                             className="w-full bg-[#0b0b0d] border border-slate-800 text-slate-200 text-sm rounded-lg pl-10 p-2.5 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-colors"
-                            placeholder="email@example.com"
+                            placeholder={t.form.email}
                           />
                         </div>
                       </div>
@@ -560,7 +560,7 @@ const PortfolioStructured = () => {
                           required
                           rows="4"
                           className="w-full bg-[#0b0b0d] border border-slate-800 text-slate-200 text-sm rounded-lg pl-10 p-2.5 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-colors resize-none"
-                          placeholder="Scrivi qui il tuo messaggio..."
+                          placeholder={t.form.message}
                         ></textarea>
                       </div>
                     </div>

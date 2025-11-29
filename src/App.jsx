@@ -530,7 +530,7 @@ const PortfolioStructured = () => {
                             id="name"
                             required
                             className="w-full bg-[#0b0b0d] border border-slate-800 text-slate-200 text-sm rounded-lg pl-10 p-2.5 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-colors"
-                            placeholder="Nome Cognome"
+                            placeholder={form.name}
                           />
                         </div>
                       </div>

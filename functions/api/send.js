@@ -1,7 +1,6 @@
-/* functions/api/send.js */
 export async function onRequestPost(context) {
   const { request, env } = context;
-
+ 
   try {
     // 1. Parsing dei dati dal form React
     const { name, email, message } = await request.json();

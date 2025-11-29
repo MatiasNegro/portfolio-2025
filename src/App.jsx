@@ -158,22 +158,37 @@ const PortfolioStructured = () => {
   const t = translations[lang];
 
   const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    setFormStatus('submitting');
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
+  e.preventDefault();
+  setFormStatus('submitting');
+  
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData.entries());
 
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log("Form Data:", data);
-      setFormStatus('success');
-      e.target.reset();
-      setTimeout(() => setFormStatus('idle'), 3000);
-    } catch (error) {
-      console.error("Error:", error);
-      setFormStatus('error');
+  try {
+    // Chiamata alla Cloudflare Function
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      throw new Error('Errore nella risposta del server');
     }
-  };
+
+    // Successo
+    setFormStatus('success');
+    e.target.reset();
+    setTimeout(() => setFormStatus('idle'), 3000);
+
+  } catch (error) {
+    console.error("Error invio email:", error);
+    setFormStatus('error');
+    setTimeout(() => setFormStatus('idle'), 5000);
+  }
+};
 
   const SectionHeader = ({ icon: Icon, title }) => (
     <div className="flex items-center gap-3 mb-8 pb-3 border-b border-slate-800 animate-on-scroll">
